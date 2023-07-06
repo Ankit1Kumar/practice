@@ -66,6 +66,7 @@ jobs:
             let matchArtifact = allArtifacts.data.artifacts.filter((artifact) => {
               return artifact.name == "terraform-plan-file-${{ github.event.pull_request.number }}-1.tfout"
             })[0];
+            if (matchArtifact1) {
             let download = await github.rest.actions.downloadArtifact({
                owner: context.repo.owner,
                repo: context.repo.repo,
@@ -73,7 +74,9 @@ jobs:
             });
             let fs = require('fs');
             fs.writeFileSync(`${process.env.GITHUB_WORKSPACE}/artifact1.zip`, Buffer.from(download.data));
-
+            }else {
+            console.error('Artifact not found');}
+          
       - name: Unzip artifact1
         run: unzip artifact1.zip
 
