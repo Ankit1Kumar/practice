@@ -36,7 +36,7 @@ jobs:
         if: github.event_name == 'pull_request' && (github.event.action == 'opened' || github.event.action == 'synchronize')
         uses: actions/upload-artifact@v3
         with:
-          name: "terraform-plan-file-1.tfout"
+          name: "terraform-plan-file-${{ github.event.pull_request.number }}-1.tfout"
           path: devops.plan.tfout
           retention-days: 5
 
