@@ -40,13 +40,12 @@ jobs:
                repo: context.repo.repo,
                artifact_id: matchArtifact.id,
             });
-            console.log("Hello, world4");
+            console.log("Hello, world6");
             let fs = require('fs');
             fs.writeFileSync(`${process.env.GITHUB_WORKSPACE}/artifact1.zip`, Buffer.from(download.data));
-            }
+            
           
       - name: Unzip artifact1
         run: unzip artifact1.zip
 
-      - name: Unzip artifact2
-        run: unzip artifact2.zip
+  
