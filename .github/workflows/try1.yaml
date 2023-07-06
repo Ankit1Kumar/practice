@@ -16,7 +16,8 @@ jobs:
     steps:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2
-        with: terraform_version: 1.3.4
+        with: 
+          terraform_version: 1.3.4
 
       - name: Download Terraform Plan File
         uses: actions/github-script@v6
@@ -42,7 +43,7 @@ jobs:
                artifact_id: matchArtifact.id,
                archive_format: 'zip',
             });
-            console.log("Hello, world4");
+            console.log("Hello, world45");
             let fs = require('fs');
             fs.writeFileSync(`${process.env.GITHUB_WORKSPACE}/artifact1.zip`, Buffer.from(download.data));
             }else {
