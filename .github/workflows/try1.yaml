@@ -58,8 +58,7 @@ jobs:
       - name: random
         run: ls
 
-     - name: Terraform init
-        id: init
+      - name: Terraform init
         run: terraform init
 
       - name: abc
