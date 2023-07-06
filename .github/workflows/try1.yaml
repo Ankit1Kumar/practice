@@ -2,12 +2,10 @@ name: Pipeline
 
 on:
   pull_request:
-    types:
-      - closed
 
 jobs:
   merge:
-    if: github.event.pull_request.merged == true
+    if: github.event.action == 'closed'&& github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     env:
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
