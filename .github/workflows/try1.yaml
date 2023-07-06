@@ -51,5 +51,4 @@ jobs:
       - name: Unzip artifact1
         run: unzip artifact1.zip
 
-      - name: Unzip artifact2
-        run: unzip artifact2.zip
+  
