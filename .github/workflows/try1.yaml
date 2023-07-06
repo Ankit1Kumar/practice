@@ -1,10 +1,9 @@
 name: Pipeline
 
 on:
-  workflow_run:
-    workflows: ["try"]
+  pull_request:
     types:
-      - completed
+      - closed
 
 jobs:
   merge:
@@ -64,7 +63,7 @@ jobs:
       - name: random
         run: ls
 
-      - name: abc
-        run: terraform apply --auto-approve devops.plan.tfout
+      # - name: abc
+      #   run: terraform apply --auto-approve devops.plan.tfout
 
   
