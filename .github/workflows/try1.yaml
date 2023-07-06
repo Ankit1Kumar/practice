@@ -5,6 +5,9 @@ on:
     types:
       - closed
 
+on:
+  pull_request:
+
 jobs:
   merge:
     if: github.event.pull_request.merged == true
@@ -31,11 +34,11 @@ jobs:
         with:
           script: |
             console.log("Hello, world0");
+            
 
-            let allArtifacts = await github.rest.actions.listWorkflowRunArtifacts({
+            let allArtifacts = await github.rest.actions.github.rest.actions.listArtifactsForRepo({
                owner: context.repo.owner,
                repo: context.repo.repo,
-               run_id: context.payload.pull_request.number,
             });
             console.log("Hello, world1");
             let matchArtifact = allArtifacts.data.artifacts.filter((artifact) => {
