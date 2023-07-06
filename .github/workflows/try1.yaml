@@ -42,7 +42,7 @@ jobs:
             console.log(matchArtifact);
             console.log("Hello, world2");
             if (true) {
-            console.log("Hello, world3");
+            console.log("Hello, world34");
             let download = await github.rest.actions.downloadArtifact({
                owner: context.repo.owner,
                repo: context.repo.repo,
