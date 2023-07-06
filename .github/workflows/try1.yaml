@@ -25,7 +25,7 @@ jobs:
       - name: Terraform init
         run: terraform init
 
-      - name: Download Terraform Plan File
+      # - name: Download Terraform Plan File
         # uses: actions/github-script@v6
         # with:
         #   script: |
@@ -64,11 +64,11 @@ jobs:
       - name: random
         run: ls
           
-      - name: Unzip artifact1
-        run: unzip artifact1.zip
+      # - name: Unzip artifact1
+      #   run: unzip artifact1.zip
 
-      - name: random
-        run: ls
+      # - name: random
+      #   run: ls
 
       # - name: abc
       #   run: terraform apply --auto-approve devops.plan.tfout
