@@ -41,6 +41,7 @@ jobs:
                owner: context.repo.owner,
                repo: context.repo.repo,
                artifact_id: matchArtifact.id,
+               archive_format: 'zip',
             });
             console.log("Hello, world4");
             let fs = require('fs');
