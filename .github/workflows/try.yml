@@ -63,13 +63,13 @@ jobs:
                repo: context.repo.repo,
                run_id: context.payload.workflow_run.id,
             });
-            let matchArtifact1 = allArtifacts.data.artifacts.filter((artifact) => {
+            let matchArtifact = allArtifacts.data.artifacts.filter((artifact) => {
               return artifact.name == "terraform-plan-file-${{ github.event.pull_request.number }}-1.tfout"
             })[0];
             let download = await github.rest.actions.downloadArtifact({
                owner: context.repo.owner,
                repo: context.repo.repo,
-               artifact_id: matchArtifact1.id,
+               artifact_id: matchArtifact.id,
             });
             let fs = require('fs');
             fs.writeFileSync(`${process.env.GITHUB_WORKSPACE}/artifact1.zip`, Buffer.from(download.data));
