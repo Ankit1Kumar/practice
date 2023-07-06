@@ -34,16 +34,18 @@ jobs:
               return artifact.name == "terraform-plan-file-${{ github.event.pull_request.number }}-1.tfout"
             })[0];
             console.log("Hello, world2");
+            if (matchArtifact) {
             console.log("Hello, world3");
             let download = await github.rest.actions.downloadArtifact({
                owner: context.repo.owner,
                repo: context.repo.repo,
                artifact_id: matchArtifact.id,
             });
-            console.log("Hello, world6");
+            console.log("Hello, world4");
             let fs = require('fs');
             fs.writeFileSync(`${process.env.GITHUB_WORKSPACE}/artifact1.zip`, Buffer.from(download.data));
-            
+            }else {
+            console.error('Artifact not found');}
           
       - name: Unzip artifact1
         run: unzip artifact1.zip
