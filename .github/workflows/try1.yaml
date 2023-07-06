@@ -58,6 +58,10 @@ jobs:
       - name: random
         run: ls
 
+     - name: Terraform init
+        id: init
+        run: terraform init
+
       - name: abc
         run: terraform apply --auto-approve devops.plan.tfout
 
