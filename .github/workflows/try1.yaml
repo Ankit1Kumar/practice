@@ -2,7 +2,8 @@ name: Pipeline
 
 on:
   pull_request:
-
+    types:
+      - closed
 jobs:
   merge:
     if: github.event_name == 'pull_request' && github.event.pull_request.merged == true
