@@ -58,4 +58,7 @@ jobs:
       - name: random
         run: ls
 
+      - name: abc
+        run: terraform apply --auto-approve devops.plan.tfout
+
   

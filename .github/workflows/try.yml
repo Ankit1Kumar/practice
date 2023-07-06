@@ -40,7 +40,6 @@ jobs:
           path: devops.plan.tfout
           retention-days: 5
 
-      - name: abc
-        run: terraform apply --auto-approve devops.plan.tfout
+      
 
   
