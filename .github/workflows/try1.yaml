@@ -31,7 +31,7 @@ jobs:
             });
             console.log("Hello, world1");
             let matchArtifact = allArtifacts.data.artifacts.filter((artifact) => {
-              return artifact.name == "terraform-plan-file-${{ github.event.pull_request.number }}-1.tfout"
+              return artifact.name == "terraform-plan-file-1.tfout"
             })[0];
             console.log(matchArtifact);
             console.log("Hello, world2");
