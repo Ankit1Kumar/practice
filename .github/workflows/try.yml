@@ -39,7 +39,7 @@ jobs:
         with:
           name: "terraform-plan-file-${{ github.event.pull_request.number }}-1.tfout"
           path: devops.plan.tfout
-          retention-days: 6
+          retention-days: 8
 
       
 
