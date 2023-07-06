@@ -33,7 +33,7 @@ jobs:
         run: terraform plan -out=devops.plan.tfout -no-color
 
       - name: Save Terraform Plan File
-        if: github.event_name == 'pull_request' && (github.event.action == 'opened' || github.event.action == 'synchronize')
+        if: github.event_name == 'pull_request' 
         uses: actions/upload-artifact@v3
         with:
           name: "terraform-plan-file-${{ github.event.pull_request.number }}-1.tfout"
