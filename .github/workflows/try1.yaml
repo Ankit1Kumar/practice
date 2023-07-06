@@ -1,10 +1,7 @@
 name: Pipeline
 
 on:
-  workflow_run:
-    workflows: ["try"]
-    types:
-      - completed
+  pull_request:
 
 jobs:
   merge:
@@ -18,6 +15,11 @@ jobs:
         uses: hashicorp/setup-terraform@v2
         with:
           terraform_version: 1.3.4
+
+      - name: wait
+        run: |
+          sleep 35
+          echo "Wait complete"
 
       - name: Download Terraform Plan File
         uses: actions/github-script@v6
