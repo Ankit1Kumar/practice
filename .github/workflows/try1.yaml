@@ -48,8 +48,14 @@ jobs:
             fs.writeFileSync(`${process.env.GITHUB_WORKSPACE}/artifact1.zip`, Buffer.from(download.data));
             }else {
             console.error('Artifact not found');}
+
+      - name: random
+        run: ls
           
       - name: Unzip artifact1
         run: unzip artifact1.zip
+
+      - name: random
+        run: ls
 
   
