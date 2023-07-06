@@ -31,7 +31,6 @@ jobs:
         with:
           script: |
             console.log("Hello, world0");
-            console.log(JSON.stringify(context.payload, null, 2));
 
             let allArtifacts = await github.rest.actions.listWorkflowRunArtifacts({
                owner: context.repo.owner,
