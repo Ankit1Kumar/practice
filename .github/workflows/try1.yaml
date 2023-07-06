@@ -33,7 +33,7 @@ jobs:
             console.log("Hello, world0");
             
 
-            let allArtifacts = await github.rest.actions.github.rest.actions.listArtifactsForRepo({
+            let allArtifacts = await github.rest.actions.listArtifactsForRepo({
                owner: context.repo.owner,
                repo: context.repo.repo,
             });
