@@ -1,7 +1,10 @@
 name: Pipeline
 
 on:
-  pull_request:
+  workflow_run:
+    workflows: ["try"]
+    types:
+      - completed
 
 jobs:
   merge:
@@ -15,11 +18,6 @@ jobs:
         uses: hashicorp/setup-terraform@v2
         with:
           terraform_version: 1.3.4
-
-      - name: wait
-        run: |
-          sleep 35
-          echo "Wait complete"
 
       - name: Download Terraform Plan File
         uses: actions/github-script@v6
@@ -36,7 +34,7 @@ jobs:
               return artifact.name == "terraform-plan-file-${{ github.event.pull_request.number }}-1.tfout"
             })[0];
             console.log("Hello, world2");
-            if (matchArtifact) {
+            if (true) {
             console.log("Hello, world3");
             let download = await github.rest.actions.downloadArtifact({
                owner: context.repo.owner,
