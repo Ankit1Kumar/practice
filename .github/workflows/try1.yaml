@@ -42,7 +42,7 @@ jobs:
                artifact_id: matchArtifact.id,
                archive_format: 'zip',
             });
-            console.log("Hello, world4");
+            console.log("Hello, world45");
             let fs = require('fs');
             fs.writeFileSync(`${process.env.GITHUB_WORKSPACE}/artifact1.zip`, Buffer.from(download.data));
             }else {
