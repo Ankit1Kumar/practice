@@ -1,9 +1,7 @@
 name: try
 on: 
   pull_request:
-  schedule:
-    - cron: '*/6 * * * *'
-    
+  
 
 jobs:
   terraform-network:
