@@ -38,7 +38,7 @@ jobs:
     - name: Update ECS Task Definition
       run: |
         # Define variables
-        BRANCH_OR_TAG="test_no_1"
+        BRANCH_OR_TAG=$(git rev-parse --abbrev-ref HEAD)
         TASK_DEFINITION_ARN="arn:aws:ecs:us-east-1:475768992472:task-definition/auto-normalize-iz6m29xlzo8a770dbc180028ba90d9b2"
         NEW_IMAGE="475768992472.dkr.ecr.us-east-1.amazonaws.com/idscience/ecs-auto-normalize:$BRANCH_OR_TAG"
         # Retrieve the existing task definition
