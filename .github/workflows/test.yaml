@@ -8,7 +8,7 @@ on:
 
 jobs:
   update-task-definition:
-    runs-on: [aws-devops]
+    runs-on: ubuntu-latest
 
     steps:
     - name: Configure AWS Credentials for use
