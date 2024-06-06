@@ -41,7 +41,7 @@ jobs:
 
           # Get the current branch or tag
           BRANCH_OR_TAG=$(git rev-parse --abbrev-ref HEAD)
-          TASK_DEFINITION_ARN="arn:aws:ecs:us-east-1:223449663023:task-definition/auto-normalize"
+          TASK_DEFINITION_ARN="arn:aws:ecs:us-east-1:223449663023:task-definition/auto-normalize-iz6m29xlzo8a770dbc180028ba90d9b2"
           NEW_IMAGE="223449663023.dkr.ecr.us-east-1.amazonaws.com/idscience/ecs-auto-normalize:$BRANCH_OR_TAG"
 
           echo "Branch or Tag: $BRANCH_OR_TAG"
