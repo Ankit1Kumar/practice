@@ -2,6 +2,9 @@
 
 set -e
 
+ls
+pwd
+
 # Install AWS CLI and jq
 sudo apt-get update
 sudo apt-get install -y awscli jq
