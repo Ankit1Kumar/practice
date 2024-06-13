@@ -23,5 +23,5 @@ jobs:
       run: |
         ls
         pwd
-        chmod +x ./update_task_definition.sh
-        ./update_task_definition.sh 475768992472
+        chmod +x ./update_task_definition_devops.sh
+        ./update_task_definition_devops.sh 475768992472
