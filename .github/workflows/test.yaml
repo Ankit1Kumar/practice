@@ -21,5 +21,5 @@ jobs:
 
     - name: Update ECS Task Definition
       run: |
-        chmod +x ../update_task_definition.sh
-        ../update_task_definition.sh 475768992472
+        chmod +x ./update_task_definition.sh
+        ./update_task_definition.sh 475768992472
