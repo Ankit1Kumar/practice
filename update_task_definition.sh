@@ -10,7 +10,7 @@ sudo apt-get update
 sudo apt-get install -y awscli jq
 
 # Get the current branch or tag
-ACCOUNT_ID = $1
+ACCOUNT_ID=$1
 BRANCH_OR_TAG=$(git rev-parse --abbrev-ref HEAD)
 TASK_DEFINITION_ARN="arn:aws:ecs:us-east-1:${ACCOUNT_ID}:task-definition/auto-normalize-iz6m29xlzo8a770dbc180028ba90d9b2"
 NEW_IMAGE="${ACCOUNT_ID}.dkr.ecr.us-east-1.amazonaws.com/idscience/ecs-auto-normalize:$BRANCH_OR_TAG"
