@@ -5,9 +5,8 @@ on:
 
 jobs:
   update-task-definition:
-    runs-on: [aws-devops]
-    environment: infra-devops
-
+    runs-on: ubuntu-latest
+    
     steps:
 
     - name: Checkout repository
